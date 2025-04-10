@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Settings } from "@/components/settings"
 import { Maximize, Minimize, Plus, Minus } from "lucide-react"
+import Image from "next/image"
+
+// logo
+import logo from "../public/logo.png"
 
 interface HeaderProps {
   increaseTimeSize: () => void
@@ -16,7 +20,8 @@ export function Header({ increaseTimeSize, decreaseTimeSize, toggleFullScreen, i
   return (
     <header className="flex items-center justify-between p-4 bg-gray-800 text-white dark:bg-gray-900 header">
       <div className="flex items-center">
-        <h1 className="text-2xl font-bold">Global Edu</h1>
+        <h1 className="text-2xl font-bold"></h1>
+        <Image className="w-[50px]" src={logo} alt="logo"/>
       </div>
       <div className="flex items-center space-x-2">
         <div className="flex items-center space-x-1">

@@ -23,7 +23,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
       </head>
       <body className={`${inter.variable} ${orbitron.variable} font-sans`}  cz-shortcut-listen="true">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>

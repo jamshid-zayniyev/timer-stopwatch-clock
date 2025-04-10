@@ -10,6 +10,10 @@ import { Clock } from "@/components/clock"
 import { useLocalStorage } from "@/hooks/use-local-storage"
 import { useZoom } from "@/hooks/use-zoom"
 import { useSettings } from "@/hooks/use-settings"
+import Image from "next/image"
+
+import logo from "../public/logo.png"
+
 
 type ClockMode = "timer" | "alarm" | "stopwatch" | "clock"
 
