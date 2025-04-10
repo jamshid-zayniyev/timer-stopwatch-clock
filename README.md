@@ -5,7 +5,7 @@
 
 <h2>🚀 Demo</h2>
 
-[https://timer-stopwatch-clock.vercel.app/](https://timer-stopwatch-clock.vercel.app)
+[https://global-timer.vercel.app/](https://global-timer.vercel.app/)
 
 <h2>🛠 Installation Steps:</h2>
 
