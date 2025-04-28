@@ -17,6 +17,7 @@ interface HeaderProps {
 }
 
 export function Header({ increaseTimeSize, decreaseTimeSize, toggleFullScreen, isFullScreen }: HeaderProps) {
+
   return (
     <header className="flex items-center justify-between p-4 bg-gray-800 text-white dark:bg-gray-900 header">
       <div className="flex items-center">

@@ -12,7 +12,7 @@ import { useZoom } from "@/hooks/use-zoom"
 import { useSettings } from "@/hooks/use-settings"
 import Image from "next/image"
 
-import logo from "../public/logo.png"
+
 
 
 type ClockMode = "timer" | "alarm" | "stopwatch" | "clock"
@@ -22,18 +22,18 @@ export function ClockApp() {
   const { zoomLevel, timeDisplaySize, increaseTimeSize, decreaseTimeSize } = useZoom()
   const [isFullScreen, setIsFullScreen] = useState(false)
   const { focusMode } = useSettings()
-
+  
   useEffect(() => {
     const handleFullScreenChange = () => {
       setIsFullScreen(!!document.fullscreenElement)
     }
-
+    
     document.addEventListener("fullscreenchange", handleFullScreenChange)
     return () => {
       document.removeEventListener("fullscreenchange", handleFullScreenChange)
     }
   }, [])
-
+  
   const toggleFullScreen = useCallback(async () => {
     if (!document.fullscreenElement) {
       try {
@@ -47,9 +47,20 @@ export function ClockApp() {
       }
     }
   }, [])
+  
+  const logo = require("../public/logo.png");
+
+  
+
+  const bgImg = {
+    backgroundImage:`url(${logo?.default?.src})`,
+    backgroundRepeat:"no-repeat",
+    // backgroundSize:'cover',
+    backgroundPosition:'center',
+  }
 
   return (
-    <div className="flex flex-col h-screen" style={{ fontSize: `${zoomLevel}%` }}>
+    <div  className="flex flex-col h-screen" style={{ fontSize: `${zoomLevel}%` }}>
       <Header
         increaseTimeSize={increaseTimeSize}
         decreaseTimeSize={decreaseTimeSize}

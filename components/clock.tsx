@@ -7,6 +7,14 @@ interface ClockProps {
   isFullScreen: boolean
   timeDisplaySize: number
 }
+const logo = require("../public/logo.png");
+
+const bgImg = {
+  backgroundImage:`url(${logo?.default?.src})`,
+  backgroundRepeat:"no-repeat",
+  backgroundSize:'cover',
+  backgroundPosition:'center',
+}
 
 export function Clock({ isFullScreen, timeDisplaySize }: ClockProps) {
   const [time, setTime] = useState("")
@@ -69,12 +77,12 @@ export function Clock({ isFullScreen, timeDisplaySize }: ClockProps) {
         {!isFullScreen && (
           <>
             {/* Analog clock */}
-            <div className="w-64 h-64 rounded-full border-4 border-gray-300 dark:border-gray-700 relative mx-auto mb-8">
+            <div style={bgImg} className="w-64 h-64 rounded-full border-4 border-gray-300 dark:border-gray-700 relative mx-auto mb-8">
               {/* Clock face */}
               {[...Array(12)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute w-1 h-4 bg-gray-800 dark:bg-gray-200"
+                  // className="absolute w-1 h-4 bg-gray-800 dark:bg-gray-200"
                   style={{
                     height: i % 3 === 0 ? "16px" : "8px",
                     width: i % 3 === 0 ? "4px" : "2px",
@@ -95,6 +103,7 @@ export function Clock({ isFullScreen, timeDisplaySize }: ClockProps) {
                   transform: `translateX(-50%) rotate(${(new Date().getHours() % 12) * 30 + new Date().getMinutes() * 0.5}deg)`,
                 }}
               />
+              
 
               {/* Minute hand */}
               <div
